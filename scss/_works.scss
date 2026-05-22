@@ -1,0 +1,158 @@
+@use "variables" as *;
+
+.works {
+  background-color: $color-base-light;
+  padding: clamp(60px, 9vw, 130px) clamp(24px, 7vw, 100px);
+
+  &-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+
+  &-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    width: 100%;
+    gap: 0;
+  }
+
+  &-label {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    margin-bottom: 40px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background-color: $color-nav-dark;
+      flex-shrink: 0;
+    }
+
+    span {
+      font-size: 16px;
+      color: $color-nav-dark;
+      letter-spacing: 0.2em;
+    }
+  }
+
+  &-heading {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: clamp(32px, calc(1.5rem + 2.25vw), 56px);
+    font-weight: 600;
+    color: $color-nav-dark;
+    line-height: 1.2;
+  }
+
+  &-text {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: clamp(16px, calc(0.7rem + 0.75vw), 22px);
+    color: $color-nav-dark;
+    line-height: 1.7;
+    align-self: end;
+    padding-bottom: 8px;
+  }
+
+  &-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 82px;
+    width: 100%;
+  }
+
+  &-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__img {
+      position: relative;
+      height: clamp(280px, 25vw, 314px);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__tag {
+      position: absolute;
+      top: 28px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      padding: 0 20px;
+      background-color: $color-base-dark;
+      color: $color-text-light;
+      font-size: 14px;
+    }
+
+    &__case {
+      font-size: 16px;
+      color: #7a8499;
+      letter-spacing: 0.1em;
+    }
+
+    &__title {
+      font-size: clamp(20px, 2vw, 22px);
+      color: $color-base-darker;
+      line-height: 1.4;
+    }
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 220px;
+    border: 1px solid $color-base-dark;
+    background-color: $color-base-light;
+    color: $color-nav-dark;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    @include btn-hover;
+  }
+
+  // タブレット
+  @media (max-width: $bp-tb) {
+    &-header {
+      grid-template-columns: 1fr;
+    }
+
+    &-text {
+      grid-column: 1;
+      grid-row: 3;
+      padding-top: 16px;
+    }
+
+    &-cards {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+  }
+
+  // スマートフォン
+  @media (max-width: $bp-sp) {
+    &-cards {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@use "variables" as *;
+
+.contact {
+  background-color: $color-base-darker;
+  padding: clamp(60px, 9vw, 100px) clamp(24px, 7vw, 100px);
+
+  &-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+  }
+
+  &-label {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background-color: $color-accent;
+      flex-shrink: 0;
+    }
+
+    span {
+      font-size: 16px;
+      color: $color-accent;
+      letter-spacing: 0.2em;
+    }
+  }
+
+  &-heading {
+    font-size: clamp(36px, calc(1.5rem + 2.25vw), 56px);
+    font-weight: 600;
+    color: $color-text-light;
+    line-height: 1.2;
+  }
+
+  &-text {
+    font-size: clamp(16px, calc(0.7rem + 0.75vw), 22px);
+    color: $color-text-light;
+    line-height: 1.7;
+    opacity: 0.8;
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 0 40px;
+    background-color: $color-base-light;
+    color: $color-base-dark;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: 10px;
+    @include btn-hover;
+  }
+
+  // スマートフォン
+  @media (max-width: $bp-sp) {
+    &-btn {
+      width: 100%;
+      max-width: 260px;
+    }
+  }
+}

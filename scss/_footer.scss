@@ -1,0 +1,231 @@
+@use "variables" as *;
+
+.footer {
+  background-color: $color-base-darker;
+  padding: clamp(60px, 9vw, 100px) clamp(24px, 7vw, 100px) 0;
+
+  &-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid rgba($color-text-light, 0.2);
+  }
+
+  // ブランドエリア
+  &-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &-logo {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+    }
+  }
+
+  &-logo-mark {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+
+    &__outer {
+      position: absolute;
+      inset: 0;
+      border: 1px solid #e5eaf1;
+    }
+
+    &__inner {
+      position: absolute;
+      inset: 10px;
+      border: 1px solid #e5eaf1;
+    }
+
+    &__accent {
+      position: absolute;
+      inset: 25px;
+      background-color: $color-accent;
+      box-shadow: inset 4px 4px 4px 3px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &-logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &-logo-name {
+    font-size: clamp(22px, calc(0.5rem + 2vw), 36px);
+    font-weight: 600;
+    color: $color-text-light;
+  }
+
+  &-logo-en {
+    font-size: clamp(13px, 1.2vw, 18px);
+    font-weight: 500;
+    color: $color-text-light;
+    letter-spacing: 0.2em;
+  }
+
+  &-desc {
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-text-light;
+    line-height: 1.8;
+    letter-spacing: 0.2em;
+  }
+
+  &-address {
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-text-light;
+    line-height: 1.8;
+    letter-spacing: 0.2em;
+    font-style: normal;
+  }
+
+  // ナビエリア
+  &-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding-top: 40px;
+  }
+
+  &-nav-col {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    &__title {
+      font-size: 16px;
+      font-weight: 500;
+      color: $color-accent;
+      letter-spacing: 0.1em;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      list-style: none;
+    }
+
+    a {
+      font-size: 15px;
+      font-weight: 500;
+      color: $color-text-light;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      transition: opacity 0.2s ease;
+
+      &:hover { opacity: 0.7; }
+    }
+  }
+
+  // ボトムエリア
+  &-bottom {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 40px;
+  }
+
+  &-copyright,
+  &-policy {
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-text-light;
+    letter-spacing: 0.2em;
+  }
+
+  &-policy {
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover { opacity: 0.7; }
+    }
+  }
+
+  // タブレット
+  @media (max-width: $bp-tb) {
+    &-inner {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+  }
+
+  // スマートフォン
+  @media (max-width: $bp-sp) {
+    &-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    &-logo-mark {
+      width: 50px;
+      height: 50px;
+
+      &__inner {
+        inset: 6px;
+      }
+
+      &__accent {
+        inset: 14px;
+      }
+    }
+
+    &-logo-name {
+      font-size: 22px;
+    }
+
+    &-logo-en {
+      font-size: 14px;
+    }
+
+    &-nav {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    &-nav-col {
+      &__title {
+        letter-spacing: 0.05em;
+      }
+
+      a {
+        letter-spacing: 0.05em;
+      }
+    }
+
+    &-bottom {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+
+    &-copyright,
+    &-policy {
+      font-size: 14px;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  // 極小デバイス（320px以下）
+  @media (max-width: 320px) {
+    &-nav {
+      grid-template-columns: 1fr;
+    }
+  }
+}

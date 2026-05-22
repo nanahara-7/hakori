@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__figma__get_design_context",
+      "Bash(npx sass *)",
+      "mcp__figma__get_metadata",
+      "Bash(python *)",
+      "Bash(python3 -c \"print\\('hello'\\)\")"
+    ]
+  }
+}

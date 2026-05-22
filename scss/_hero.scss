@@ -1,0 +1,219 @@
+@use "variables" as *;
+
+.hero {
+  position: relative;
+  height: 100vh;
+  max-height: 1080px;
+
+  &-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/Rectangle 7.jpg');
+    background-size: cover;
+    background-position: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(25, 25, 25, 0.5);
+    }
+  }
+
+  &-inner {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: 100px 100px 100px 199px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &-label {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    margin-top: 30px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background-color: $color-accent;
+      flex-shrink: 0;
+    }
+
+    span {
+      font-size: 16px;
+      color: $color-accent;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &-heading {
+    font-size: clamp(26px, calc(1.875rem + 2.6vw), 68px);
+    font-weight: 600;
+    color: $color-text-light;
+    line-height: 1.2;
+    margin-top: 32px;
+  }
+
+  &-text {
+    font-size: clamp(14px, calc(0.7rem + 0.75vw), 22px);
+    color: $color-text-light;
+    line-height: 2;
+    margin-top: 42px;
+  }
+
+  &-btns {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 48px;
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 180px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    @include btn-hover;
+
+    &--primary {
+      background-color: $color-base-darker;
+      color: $color-base-light;
+    }
+
+    &--outline {
+      border: 1px solid #fff;
+      color: $color-base-light;
+    }
+  }
+
+  &-stats {
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+    display: flex;
+    gap: 40px;
+  }
+
+  &-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    &__num {
+      font-size: clamp(32px, calc(1.5rem + 2vw), 48px);
+      color: $color-accent;
+      line-height: 1;
+    }
+
+    &__unit {
+      font-size: 14px;
+      color: $color-text-light;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  &-scroll {
+    position: absolute;
+    bottom: 0;
+    left: 55%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 16px;
+
+    &__text {
+      font-size: 12px;
+      color: $color-base-light;
+      letter-spacing: 0.2em;
+    }
+
+    &__line {
+      display: block;
+      width: 1px;
+      height: 40px;
+      background-color: $color-accent;
+    }
+  }
+
+  // タブレット
+  @media (max-width: $bp-tb) {
+    &-inner {
+      padding: 100px 60px 100px;
+    }
+
+    &-stats {
+      right: 60px;
+      bottom: 60px;
+    }
+  }
+
+  // スマートフォン
+  @media (max-width: $bp-sp) {
+    height: auto;
+    min-height: 100vh;
+    max-height: none;
+
+    &-inner {
+      padding: 70px 24px 80px;
+      justify-content: flex-start;
+    }
+
+    &-label {
+      &::before { width: 40px; }
+      span { font-size: 12px; }
+      padding-top: 100px;
+      margin: 0 auto;
+    }
+
+    &-heading {
+      margin-top: clamp(8px, 2vh, 16px);
+      text-align: center;
+    }
+
+    &-text {
+      line-height: 1.8;
+      margin: clamp(10px, 2vh, 20px) auto 0;
+    }
+
+    &-btns {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: clamp(12px, 3vh, 32px);
+    }
+
+    &-btn {
+      width: 180px;
+    }
+
+    &-stats {
+      position: static;
+      justify-content: center;
+      gap: 40px;
+      margin-top: clamp(12px, 3vh, 40px);
+    }
+
+    &-scroll {
+      position: static;
+      left: auto;
+      transform: none;
+      padding-bottom: 0;
+      margin-top: clamp(24px, 5vh, 48px);
+      align-self: center;
+    }
+  }
+
+}

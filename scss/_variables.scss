@@ -1,0 +1,27 @@
+$color-base-dark: #061632;
+$color-base-darker: #0a1f3d;
+$color-base-light: #fbfbfd;
+$color-nav-dark: #3b4a66;
+$color-accent: #d97706;
+$color-accent-2: #ff9327;
+$color-text-light: #e8eaed;
+
+// フォント
+$font-serif: "Noto Serif JP", serif;
+
+// ブレークポイント
+$bp-sp: 767px;
+$bp-tb: 1024px;
+
+// ボタン共通hover
+@mixin btn-hover {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    background-color: $color-accent;
+    color: $color-base-light;
+    border: none;
+  }
+}
