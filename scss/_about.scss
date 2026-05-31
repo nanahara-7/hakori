@@ -47,6 +47,8 @@
     position: relative;
     z-index: 1;
     height: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
     padding: 85px clamp(24px, 7vw, 100px) 105px 95px;
     display: flex;
     flex-direction: column;
@@ -115,6 +117,8 @@
   &-inner {
     position: relative;
     z-index: 1;
+    max-width: 1440px;
+    margin: 0 auto;
     padding: 90px clamp(24px, 7vw, 100px) 100px 95px;
     display: flex;
     flex-direction: column;
@@ -175,6 +179,8 @@
   padding: 90px 0 100px;
 
   &-inner {
+    max-width: 1440px;
+    margin: 0 auto;
     padding: 0 clamp(24px, 7vw, 100px);
   }
 
@@ -260,6 +266,8 @@
   padding: 90px 0 120px;
 
   &-inner {
+    max-width: 1440px;
+    margin: 0 auto;
     padding: 0 clamp(24px, 7vw, 100px);
   }
 
