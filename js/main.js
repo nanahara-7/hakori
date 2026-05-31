@@ -1,3 +1,18 @@
+new Swiper('.tech-equipment-grid', {
+  slidesPerView: 1.2,
+  spaceBetween: 16,
+  centeredSlides: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    768: {
+      enabled: false,
+    }
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.querySelector('.header-menu-btn');
   const closeBtn = document.querySelector('.drawer-close-btn');
