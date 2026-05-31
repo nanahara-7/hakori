@@ -156,3 +156,233 @@
     }
   }
 }
+
+// ─────────────────────────────────────
+// worksページ用
+// ─────────────────────────────────────
+
+// ページヒーロー
+.works-hero {
+  position: relative;
+  height: 500px;
+  padding-top: 100px;
+
+  &-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/works-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(63, 63, 63, 0.3);
+    }
+  }
+
+  &-inner {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 85px clamp(24px, 7vw, 100px) 105px 95px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    justify-content: center;
+  }
+
+  &-breadcrumb {
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-text-light;
+    letter-spacing: 0.2em;
+  }
+
+  &-label {
+    font-size: 16px;
+    color: $color-text-light;
+    letter-spacing: 0.2em;
+  }
+
+  &-heading {
+    font-size: clamp(36px, 4.7vw, 68px);
+    font-weight: 500;
+    color: $color-text-light;
+  }
+
+  &-subheading {
+    font-size: clamp(14px, 1.5vw, 22px);
+    color: $color-text-light;
+    line-height: 1.8;
+    max-width: 732px;
+  }
+
+  @media (max-width: $bp-sp) {
+    height: auto;
+    min-height: 360px;
+    padding-top: 70px;
+
+    &-inner {
+      height: auto;
+      min-height: 290px;
+      padding: 40px 24px;
+      justify-content: center;
+    }
+  }
+}
+
+// 実績・事例ギャラリー
+.works-gallery {
+  background-color: $color-base-light;
+  padding: 95px clamp(24px, 7vw, 95px) 130px;
+
+  &-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
+
+  &-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  &-filter-btn {
+    height: 70px;
+    padding: 0 48px;
+    font-size: clamp(16px, 1.5vw, 22px);
+    border: 1px solid #a6afc0;
+    background-color: transparent;
+    color: $color-nav-dark;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+
+    &.is-active,
+    &:hover {
+      background-color: #1b3a6b;
+      color: $color-text-light;
+      border-color: #1b3a6b;
+    }
+  }
+
+  &-grid {
+    width: 100%;
+    padding-bottom: 48px;
+
+    .swiper-pagination {
+      bottom: 8px;
+    }
+
+    @media (min-width: 768px) {
+      padding-bottom: 0;
+
+      .swiper-pagination {
+        display: none;
+      }
+
+      .swiper-wrapper {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 80px clamp(24px, 4vw, 82px);
+        transform: none !important;
+      }
+
+      .swiper-slide {
+        width: auto !important;
+        margin-right: 0 !important;
+      }
+    }
+  }
+
+  &-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    padding-bottom: 20px;
+
+    &__img {
+      position: relative;
+      height: clamp(220px, 22vw, 314px);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__tag {
+      position: absolute;
+      top: 28px;
+      left: 20px;
+      height: 30px;
+      padding: 0 20px;
+      background-color: $color-base-dark;
+      color: $color-text-light;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__case {
+      font-size: 16px;
+      color: #7a8499;
+      letter-spacing: 0.1em;
+      padding-left: 10px;
+    }
+
+    &__title {
+      font-size: clamp(18px, 1.8vw, 22px);
+      color: $color-base-darker;
+      line-height: 1.4;
+      padding-left: 10px;
+    }
+  }
+
+  @media (max-width: $bp-tb) {
+    &-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: $bp-sp) {
+    padding: 60px 24px 80px;
+
+    &-filter {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+      width: 100%;
+      padding-bottom: 8px;
+
+      // スクロールバーを非表示にする
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    &-filter-btn {
+      height: 52px;
+      padding: 0 28px;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    &-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+}
