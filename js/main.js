@@ -1,7 +1,24 @@
+new Swiper('.works-gallery-grid', {
+  slidesPerView: 1.2,
+  spaceBetween: 16,
+  centeredSlides: true,
+  touchEventsTarget: 'wrapper',
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    768: {
+      enabled: false,
+    }
+  }
+});
+
 new Swiper('.tech-equipment-grid', {
   slidesPerView: 1.2,
   spaceBetween: 16,
   centeredSlides: true,
+  touchEventsTarget: 'wrapper',
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
