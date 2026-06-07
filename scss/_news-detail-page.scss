@@ -1,0 +1,244 @@
+@use "variables" as *;
+
+// ─── 外側ラッパー（グレー背景） ─────────────────────
+.article-wrap {
+  background-color: rgba(232, 234, 237, 0.7);
+  margin-top: 100px;
+  padding: clamp(60px, 10.7vw, 154px) clamp(24px, 6.9vw, 100px) clamp(80px, 13.5vw, 195px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4vw, 60px);
+}
+
+// ─── 記事カード（白・角丸） ──────────────────────────
+.article-card {
+  background-color: $color-base-light;
+  border-radius: 10px;
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: clamp(32px, 4vw, 60px);
+  padding-bottom: 0;
+  // 左右は breadcrumb / meta が個別に管理
+}
+
+// ─── パンくずリスト ───────────────────────────────
+.article-breadcrumb {
+  font-size: 18px;
+  color: #7a8499;
+  letter-spacing: 0.05em;
+  padding: 0 clamp(16px, 2.5vw, 32px);
+  margin-bottom: clamp(20px, 2.5vw, 32px);
+
+  &__current {
+    color: $color-nav-dark;
+  }
+}
+
+// ─── 区切り線（カード全幅） ────────────────────────
+.article-divider {
+  height: 1px;
+  background-color: #d6dce6;
+  margin-bottom: clamp(16px, 2vw, 24px);
+}
+
+// ─── 日付・カテゴリ ───────────────────────────────
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 clamp(16px, 2.5vw, 40px) clamp(40px, 5vw, 80px);
+  padding-left: 14px;
+  border-left: 2px solid $color-nav-dark;
+  font-size: 18px;
+  color: $color-nav-dark;
+  font-weight: 500;
+}
+
+// ─── メインコンテンツ（内側インデント） ─────────────
+.article-body {
+  padding: 0 clamp(24px, 11vw, 160px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4vw, 60px);
+}
+
+// ─── タイトル・リード文 ───────────────────────────
+.article-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 47px);
+}
+
+.article-heading {
+  font-size: clamp(22px, 2.6vw, 38px);
+  font-weight: 600;
+  color: $color-nav-dark;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.article-lead {
+  font-size: clamp(16px, 1.8vw, 26px);
+  font-weight: 500;
+  color: $color-nav-dark;
+  line-height: 1.8;
+}
+
+// ─── メイン画像 ───────────────────────────────────
+.article-img {
+  margin: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+// ─── 本文セクション ───────────────────────────────
+.article-sections {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.article-section {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  }
+
+  &__bullet {
+    width: 20px;
+    height: 20px;
+    background-color: $color-accent;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-size: clamp(18px, 1.8vw, 26px);
+    font-weight: 700;
+    color: $color-nav-dark;
+  }
+
+  &__body {
+    font-size: clamp(15px, 1.4vw, 20px);
+    color: $color-nav-dark;
+    line-height: 1.9;
+  }
+}
+
+// ─── PREV / NEXT 区切り線 ────────────────────────
+.article-pager-divider {
+  height: 1px;
+  background-color: #d6dce6;
+  margin: clamp(40px, 5vw, 80px) 0 0;
+}
+
+// ─── PREV / NEXT ナビゲーション ──────────────────
+.article-pager {
+  display: flex;
+  padding: clamp(40px, 11vw, 160px) clamp(24px, 6.9vw, 100px) clamp(40px, 11vw, 160px);
+  justify-content: space-between;
+  gap: 24px;
+
+  &__prev,
+  &__next {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 12px 18px;
+    text-decoration: none;
+    max-width: 48%;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__next {
+    justify-content: flex-end;
+    text-align: right;
+    margin-left: auto;
+  }
+
+  &__arrow {
+    font-size: clamp(22px, 2.2vw, 32px);
+    font-weight: 600;
+    color: $color-nav-dark;
+    flex-shrink: 0;
+  }
+
+  &__label {
+    font-size: clamp(18px, 2vw, 28px);
+    font-weight: 500;
+    color: $color-accent;
+    flex-shrink: 0;
+  }
+
+  &__date {
+    font-size: clamp(18px, 2vw, 28px);
+    font-weight: 500;
+    color: #000;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-size: clamp(14px, 1.5vw, 22px);
+    color: $color-nav-dark;
+    width: 100%;
+    line-height: 1.5;
+  }
+}
+
+// ─── SP対応 ───────────────────────────────────────
+@media (max-width: $bp-sp) {
+  .article-wrap {
+    margin-top: 70px;
+  }
+
+  .article-breadcrumb {
+    font-size: 14px;
+  }
+
+  .article-meta {
+    font-size: 15px;
+  }
+
+  .article-section {
+    &__bullet {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .article-pager {
+    flex-direction: column;
+    gap: 0;
+
+    &__prev,
+    &__next {
+      max-width: 100%;
+      padding: 28px 0;
+    }
+
+    &__prev {
+      border-bottom: 1px solid #d6dce6;
+    }
+
+    &__next {
+      justify-content: flex-start;
+      text-align: left;
+      margin-left: 0;
+    }
+  }
+}
