@@ -35,6 +35,22 @@ if (document.querySelector('.tech-equipment-grid')) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // ニュースカテゴリフィルター
+  const filterBtns = document.querySelectorAll('.news-list-filter__btn');
+  if (filterBtns.length) {
+    const newsItems = document.querySelectorAll('.news-list-item');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.dataset.category;
+        filterBtns.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        newsItems.forEach(item => {
+          item.style.display = (category === 'all' || item.dataset.category === category) ? '' : 'none';
+        });
+      });
+    });
+  }
+
   // インタビューQ&Aアコーディオン
   document.querySelectorAll('.interview-qa-block__trigger').forEach(trigger => {
     trigger.addEventListener('click', () => {
