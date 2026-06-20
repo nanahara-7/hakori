@@ -3,8 +3,9 @@
 // ─── インタビューヒーロー ──────────────────────────
 .interview-hero {
   background-color: #0a1f3d;
-  margin-top: 100px;
-  padding: 60px clamp(24px, 7vw, 100px) 80px;
+  margin-top: 0;
+  min-height: 100vh;
+  padding: 160px clamp(24px, 7vw, 100px) 80px;
 
   &-inner {
     max-width: 1440px;
@@ -163,7 +164,7 @@
 // ─── Q&A アコーディオン ────────────────────────────
 .interview-qa {
   background-color: $color-base-light;
-  padding: 94px clamp(24px, 7vw, 95px) 160px;
+  padding: 94px clamp(24px, 7vw, 95px) 94px;
 
   &-inner {
     max-width: 852px;
@@ -335,10 +336,11 @@
     flex-direction: column;
     gap: 15px;
     text-decoration: none;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, opacity 0.2s;
 
     &:hover {
       border-color: $color-nav-dark;
+      opacity: 0.6;
     }
 
     &__nav {
