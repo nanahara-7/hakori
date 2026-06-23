@@ -368,6 +368,7 @@ body {
 
 .hero {
   position: relative;
+  overflow: hidden;
   height: 100vh;
   max-height: 1080px;
 }
@@ -513,7 +514,7 @@ body {
 .hero-scroll {
   position: absolute;
   bottom: 0;
-  left: 55%;
+  left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   display: -webkit-box;
@@ -639,7 +640,7 @@ body {
 
 .about-hero {
   position: relative;
-  height: 464px;
+  height: 100vh;
   padding-top: 100px;
 }
 .about-hero-bg {
@@ -932,6 +933,7 @@ body {
 
 .vision {
   position: relative;
+  overflow: hidden;
   min-height: 884px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -945,7 +947,7 @@ body {
 }
 .vision-bg {
   position: absolute;
-  inset: 0;
+  inset: -20% 0;
   background-image: url("../images/Background Shape.jpg");
   background-size: cover;
   background-position: center;
@@ -1160,7 +1162,7 @@ body {
 
 .tech-hero {
   position: relative;
-  height: 464px;
+  height: 100vh;
   padding-top: 100px;
 }
 .tech-hero-bg {
@@ -1788,7 +1790,7 @@ body {
 
 .works-hero {
   position: relative;
-  height: 500px;
+  height: 100vh;
   padding-top: 100px;
 }
 .works-hero-bg {
@@ -3647,8 +3649,9 @@ body {
 
 .interview-hero {
   background-color: #0a1f3d;
-  margin-top: 100px;
-  padding: 60px clamp(24px, 7vw, 100px) 80px;
+  margin-top: 0;
+  min-height: 100vh;
+  padding: 160px clamp(24px, 7vw, 100px) 80px;
 }
 .interview-hero-inner {
   max-width: 1440px;
@@ -3819,7 +3822,7 @@ body {
 
 .interview-qa {
   background-color: #fbfbfd;
-  padding: 94px clamp(24px, 7vw, 95px) 160px;
+  padding: 94px clamp(24px, 7vw, 95px) 94px;
 }
 .interview-qa-inner {
   max-width: 852px;
@@ -3993,11 +3996,12 @@ body {
           flex-direction: column;
   gap: 15px;
   text-decoration: none;
-  -webkit-transition: border-color 0.2s;
-  transition: border-color 0.2s;
+  -webkit-transition: border-color 0.2s, opacity 0.2s;
+  transition: border-color 0.2s, opacity 0.2s;
 }
 .interview-nav-card:hover {
   border-color: #3b4a66;
+  opacity: 0.6;
 }
 .interview-nav-card__nav {
   font-size: 18px;
@@ -4036,8 +4040,8 @@ body {
 
 .news-hero {
   position: relative;
-  height: 513px;
-  margin-top: 100px;
+  height: 100vh;
+  margin-top: 0;
   overflow: hidden;
   background-image: url(../images/Frame\ 1171276112.jpg);
   background-size: cover;

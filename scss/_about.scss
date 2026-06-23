@@ -326,6 +326,7 @@
 
 .vision {
   position: relative;
+  overflow: hidden;
   min-height: 884px;
   display: flex;
   align-items: center;
@@ -333,7 +334,7 @@
 
   &-bg {
     position: absolute;
-    inset: 0;
+    inset: -20% 0;
     background-image: url('../images/Background Shape.jpg');
     background-size: cover;
     background-position: center;
