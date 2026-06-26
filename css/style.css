@@ -3220,10 +3220,10 @@ body {
 }
 .recruit-benefits-card__num {
   position: absolute;
-  top: 17px;
+  top: 28px;
   left: 28px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #061632;
   color: #e8eaed;
@@ -3358,7 +3358,7 @@ body {
 }
 .recruit-interview-card__img {
   width: 100%;
-  height: clamp(260px, 33vw, 467px);
+  height: clamp(320px, 33vw, 467px);
   overflow: hidden;
 }
 .recruit-interview-card__img img {
@@ -4814,7 +4814,7 @@ body {
 
 .contact-hero {
   position: relative;
-  height: 513px;
+  height: calc(100vh - 100px);
   margin-top: 100px;
   overflow: hidden;
   background-image: url(../images/works-hero-bg.jpg);
@@ -5033,10 +5033,10 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 50px;
-  padding: 0 25px;
+  height: 28px;
+  padding: 0 12px;
   background-color: #0a1f3d;
-  font-size: 20px;
+  font-size: 13px;
   color: #fff;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -5193,19 +5193,21 @@ body {
           justify-content: center;
 }
 .cform-btn {
-  height: 70px;
-  padding: 0 clamp(32px, 3.4vw, 49px);
+  height: 50px;
+  padding: 0 40px;
   background-color: #0a1f3d;
   border: none;
-  font-size: clamp(18px, 1.5vw, 22px);
+  font-size: 16px;
   color: #e8eaed;
   font-family: "Noto Serif JP", serif;
   cursor: pointer;
-  -webkit-transition: opacity 0.2s;
-  transition: opacity 0.2s;
+  -webkit-transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 .cform-btn:hover {
-  opacity: 0.8;
+  background-color: #d97706;
+  color: #fbfbfd;
+  border: none;
 }
 @media (max-width: 767px) {
   .cform-row {
